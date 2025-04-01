@@ -122,20 +122,4 @@
 	  });
 	}
 
-  // Filter button functionality
-  $(document).ready(function(){
-    $('.filter-btn').on('click', function(){
-      var group = $(this).data('group');
-      $('.filter-btn').removeClass('active');
-      $(this).addClass('active');
-      
-      if(group === 'all'){
-        $('.work-item').show();
-      } else {
-        $('.work-item').hide();
-        $('.work-item').filter('[data-group="'+group+'"]').show();
-      }
-    });
-  });
-
 })(jQuery);
