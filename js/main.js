@@ -122,4 +122,20 @@
 	  });
 	}
 
+  $(document).ready(function(){
+    $('#contactForm').on('submit', function(e){
+      e.preventDefault(); // Prevent default submission
+      console.log("Form submitted");
+
+      // Hide the form (slide it up)
+      $(this).slideUp("fast", function(){
+        // Once the form is hidden, permanently show the thank-you message
+        $('#sendmessage').text("Your message has been sent successfully. Thank you!").slideDown("fast");
+      });
+
+      // Hide any error messages if visible
+      $('#errormessage').hide();
+    });
+  });
+
 })(jQuery);
